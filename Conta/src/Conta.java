@@ -1,13 +1,11 @@
 
-public class Conta {
+abstract class Conta {
 	protected double saldo;
 	private String nome;
 	private int agencia;
 
 	// métodos comuns da classe
-	public void atualiza(double taxa) {
-		this.saldo += this.saldo * taxa;
-	}
+	abstract void atualiza(double taxa);
 
 	public void saca(double valor) {
 		this.saldo -= valor;
