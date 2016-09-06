@@ -1,3 +1,4 @@
+package contas;
 
 public class AtualizadorDeContas {
 	private double saldoTotal = 0;
