@@ -27,6 +27,8 @@ public class Tela extends JFrame {
 				try {
 					Tela frame = new Tela();
 					frame.setVisible(true);
+					Explorer explorer = new Explorer();
+					explorer.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
