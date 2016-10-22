@@ -54,8 +54,9 @@ public class Tela extends JFrame {
 				painel.add(new JLabel(imageIcon));
 				painel.setVisible(true);
 				frame.add(painel);
+				frame.setSize(imageIcon.getIconWidth(),imageIcon.getIconHeight());
 				frame.setVisible(true);
-				frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+				frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
 			}
 		});
 		gl_contentPane.setHorizontalGroup(

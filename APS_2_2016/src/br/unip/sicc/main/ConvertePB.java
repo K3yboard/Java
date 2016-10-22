@@ -11,7 +11,7 @@ public class ConvertePB{
       public static BufferedImage getImage() {
     	BufferedImage image = null;
 		try {
-			image = ImageIO.read(new File("/home/k3yboard/workspace/APS_2_2016/imagens/teste2.jpg"));
+			image = ImageIO.read(new File("imagens/teste2.jpg"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
