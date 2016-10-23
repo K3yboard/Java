@@ -50,6 +50,8 @@ public class Tela extends JFrame {
 		btnConfirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Teste");
+				TelaImagem frame = new TelaImagem();
+				frame.setVisible(true);
 			}
 		});
 		
