@@ -11,9 +11,9 @@ public class ConvertePB{
       public static BufferedImage getImage() {
     	BufferedImage image = null;
 		try {
-			image = ImageIO.read(new File("imagens/teste2.jpg"));
+			image = ImageIO.read(new File(Tela.getTextField().getText()));
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.err.println("Erro ao ler a imagem");
 		}
 		return image;
 	  }

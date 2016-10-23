@@ -1,13 +1,12 @@
 package br.unip.sicc.main;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import java.awt.image.BufferedImage;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import java.awt.image.BufferedImage;
+
 import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import javax.swing.GroupLayout.Alignment;
@@ -31,42 +30,28 @@ public class TelaImagem extends JFrame {
 		
 		JLayeredPane layeredPane = new JLayeredPane();
 		
-		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		
+		JPanel panel = new JPanel();
+		panel.setSize(Width, Height);
+		BufferedImage img = ConvertePB.getImage();
+		ImageIcon imageIcon = new ImageIcon(img);
+		panel.add(new JLabel(imageIcon));
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(29)
-							.addComponent(layeredPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addComponent(tabbedPane, GroupLayout.PREFERRED_SIZE, 425, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addGap(29)
+					.addComponent(layeredPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(394, Short.MAX_VALUE))
+				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE)
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(tabbedPane, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
+					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 250, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(layeredPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(240, Short.MAX_VALUE))
+					.addContainerGap(136, Short.MAX_VALUE))
 		);
-		
-		JPanel panel = new JPanel();
-		panel.setSize(Width, Height);
-		BufferedImage img = ConvertePB.converteIMGPB(ConvertePB.getImage());
-		ImageIcon imageIcon = new ImageIcon(img);
-		panel.add(new JLabel(imageIcon));
-		tabbedPane.addTab("Imagem Original", null, panel, null);
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setSize(Width, Height);
-		tabbedPane.addTab("Imagem Editada", null, panel_1, null);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setSize(Width, Height);
-		tabbedPane.addTab("Estatistica", null, panel_2, null);
 		contentPane.setLayout(gl_contentPane);
 	}
 }

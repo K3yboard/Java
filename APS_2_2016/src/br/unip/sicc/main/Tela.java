@@ -22,7 +22,12 @@ import java.awt.event.ActionEvent;
 public class Tela extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private static JTextField textField;
+	
+	public static JTextField getTextField() {
+		return textField;
+	}
+
 	private JButton btnConfirmar;
 
 	public static void main(String[] args) {
