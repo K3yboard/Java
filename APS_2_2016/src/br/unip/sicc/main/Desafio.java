@@ -58,6 +58,7 @@ public class Desafio extends JFrame {
                 jfc.setFileFilter(new FileNameExtensionFilter("Imagem", "jpg", "jpeg", "gif"));
                 jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
                 jfc.showDialog(jfc, "Selecione");
+                System.out.println("Diretorio : " + jfc.getSelectedFile());
                 JOptionPane.showMessageDialog(null, jfc.getSelectedFile());
             }
         });
