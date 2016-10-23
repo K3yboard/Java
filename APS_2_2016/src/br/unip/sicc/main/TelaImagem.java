@@ -20,10 +20,11 @@ public class TelaImagem extends JFrame {
 	private JPanel contentPane;
 
 	public TelaImagem() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		int Width = ConvertePB.getImage().getWidth();
 		int Height = ConvertePB.getImage().getHeight();
 		setBounds(100, 100, Width, Height);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
