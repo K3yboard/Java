@@ -65,8 +65,9 @@ public class Tela extends JFrame {
                 	textField.setText(""+jfc.getSelectedFile());
                 	textField.setEditable(false);
                 	btnConfirmar.setEnabled(true);
+                }else{
+                	JOptionPane.showMessageDialog(null, "Voce nao selecionou nenhuma imagem !");
                 }
-                JOptionPane.showMessageDialog(null, jfc.getSelectedFile());
 			}
 		});
 		
