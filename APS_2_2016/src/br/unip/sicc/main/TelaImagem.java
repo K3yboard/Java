@@ -2,11 +2,14 @@ package br.unip.sicc.main;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.image.BufferedImage;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLayeredPane;
 import javax.swing.JTabbedPane;
@@ -18,7 +21,9 @@ public class TelaImagem extends JFrame {
 
 	public TelaImagem() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		int Width = ConvertePB.getImage().getWidth();
+		int Height = ConvertePB.getImage().getHeight();
+		setBounds(100, 100, Width, Height);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -48,12 +53,18 @@ public class TelaImagem extends JFrame {
 		);
 		
 		JPanel panel = new JPanel();
+		panel.setSize(Width, Height);
+		BufferedImage img = ConvertePB.converteIMGPB(ConvertePB.getImage());
+		ImageIcon imageIcon = new ImageIcon(img);
+		panel.add(new JLabel(imageIcon));
 		tabbedPane.addTab("Imagem Original", null, panel, null);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setSize(Width, Height);
 		tabbedPane.addTab("Imagem Editada", null, panel_1, null);
 		
 		JPanel panel_2 = new JPanel();
+		panel_2.setSize(Width, Height);
 		tabbedPane.addTab("Estatistica", null, panel_2, null);
 		contentPane.setLayout(gl_contentPane);
 	}
